@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+}
+.text {
+  position: relative;
+  font-size: 3em;
+  color: #fff;
+  letter-spacing: 2px;
+  //!===透過 js 分割出獨立單字 span===
+  span {
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 -60px 0 #fff, 0 60px 0 #fff; //!---產生 多個分身
+    animation: wave2 3s ease-in-out infinite; //!--- 動畫切換 wave1 or wave2
+  }
+}
+//!===特效1 波浪 連續效果===
+@keyframes wave1 {
+  0% {
+    transform: translateY(70px);
+  }
+  50% {
+    transform: translateY(-70px);
+  }
+  100% {
+    transform: translateY(70px);
+  }
+}
+//!===特效2 波浪 間歇效果===
+@keyframes wave2 {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-100px);
+  }
+  50%,
+  100% {
+    transform: translateY(0px);
+  }
+}
